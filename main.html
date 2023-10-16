@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Forum</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style type="text/css">
+    	body{
+    		font-family: 'Roboto';
+    	}
+    </style>
+</head>
+
+<body style = "background-color: black;">
+	<div class="subscribe-btn">
+		<a href="subscribe.html"><img src="Images/subscribe.jpg" alt = "Click Here" class="subscribe-image"></a>
+
+	</div>
+	<nav style = "background-color: black; height: 100px;" class="nav-bar-query2">
+		<div class="dropdown2">
+  <button class="dropbtn2" style="background-color: transparent; padding: 10px;"><img src = "Images/threelines.png" alt = "Click here" style=" width: 50px; "></button>
+  <div class="dropdown2-content">
+    <ul>
+      <li style=" color: #76D7EA;" class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')">Sports</li>
+      <li style=" color: #76D7EA;" class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+      <li style=" color: #76D7EA;"  class="hover-link nav-item" id="Politics" onclick="onNavItemClick('Politics')">Politics</li>
+      <li style=" color: #76D7EA;" class="hover-link nav-item" id="Technology" onclick="onNavItemClick('Technology')">Technology</li>
+    </ul>
+    <div class="dropdown" style=" padding: 10px; ">
+            <button class="dropbtn" style="color: black">Country</button>
+            <div class="dropdown-content">
+              <li style = "list-style: none;" class="hover-link nav-item drop-list" id="India" onclick="onNavItemClick('India')">India</li>
+              <li style = "list-style: none;" class="hover-link nav-item drop-list" id="America" onclick="onNavItemClick('America')">America</li>
+              <li style = "list-style: none;" class="hover-link nav-item drop-list" id="Australia" onclick="onNavItemClick('Australia')">Australia</li>
+              <li style = "list-style: none;" class="hover-link nav-item drop-list" id="UK" onclick="onNavItemClick('United Kingdom')">UK</li>
+              <li style = "list-style: none;" class="hover-link nav-item drop-list" id="Germany" onclick="onNavItemClick('Germany')">Germany</li>
+            </div>
+      </div>
+      <div class="search-box">
+        <button class="btn-search" id="search-button2" style="top: 8px"><i class="fas fa-search"><img src="Images/search.png" style=" width: 30px;"></i></button>
+        <input type="text" class="input-search" placeholder="e.g. Science" id="search-text2">
+    </div>
+      <!-- <div class="search-bar flex">
+            <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+            <button id="search-button" class="search-button">Search</button>
+        </div> -->
+        <a href="#" onclick="reload()" class="company-logo">
+            <img src="Images/Logo2.png" alt="company logo" style="width: 55px">
+        </a>
+  </div>
+</div> 
+	</nav>
+    <nav style = "background-color: #000000;" class="nav-bar-query">
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="Images/Logo2.png" alt="company logo" style="width: 55px">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')">Sports</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="Politics" onclick="onNavItemClick('Politics')">Politics</li>
+                    <li class="hover-link nav-item" id="Technology" onclick="onNavItemClick('Technology')">Technology</li>
+
+                </ul>
+            </div>
+            <div class="dropdown">
+					  <button class="dropbtn" style="color: black">Country</button>
+					  <div class="dropdown-content">
+					    <li style = "list-style: none;" class="hover-link nav-item drop-list" id="India" onclick="onNavItemClick('India')">India</li>
+					    <li style = "list-style: none;" class="hover-link nav-item drop-list" id="America" onclick="onNavItemClick('America')">America</li>
+					    <li style = "list-style: none;" class="hover-link nav-item drop-list" id="Australia" onclick="onNavItemClick('Australia')">Australia</li>
+					    <li style = "list-style: none;" class="hover-link nav-item drop-list" id="UK" onclick="onNavItemClick('United Kingdom')">UK</li>
+					    <li style = "list-style: none;" class="hover-link nav-item drop-list" id="Germany" onclick="onNavItemClick('Germany')">Germany</li>
+					  </div>
+			</div>	
+            <div class="search-box">
+                <button class="btn-search" id="search-button" style="top: 8px"><i class="fas fa-search"><img src="Images/search.png" style=" width: 30px;"></i></button>
+                <input type="text" class="input-search" placeholder="e.g. Science" id="search-text">
+            </div>
+            <!-- <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div> -->
+        </div>
+    </nav>
+    <span style="position: fixed;border-radius: 10px; color: #000000; padding: 5px;left: 30px; top: 100px;
+    background-color: #76D7EA">Click the card <br>to Read More!</span>
+    <span style="position: fixed; color: #000000; top:320px; left: 20px; background-color: #76D7EA; padding: 5px; border-radius: 10px;">SUBSCRIPTION <br> BUTTON BELOW</span>
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card" style = "background-color: whitesmoke;">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
